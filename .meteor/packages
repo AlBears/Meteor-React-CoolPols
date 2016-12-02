@@ -24,3 +24,11 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 
 stolinski:stylus-multi
 kadira:flow-router
+
+meteortoys:allthings
+
+dburles:factory
+anti:fake
+random
+ultimatejs:tracker-react
+babrahams:constellation
