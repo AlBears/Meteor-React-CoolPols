@@ -5,8 +5,18 @@ import Polls from './Polls.jsx';
 import PollsData from '../api/polls.js';
 
 export default class App extends TrackerReact(Component) {
+  constructor(){
+    super();
+    this.state = {
+      subscription: {
+        pollsData: Meteor.subscribe('polls')
+      }
+    }
+  }
+  componentWillUnmount() {
+    this.state.subscription.pollsData.stop();
+  }
   pollsData() {
-    Meteor.subscribe('polls');
     return PollsData.find().fetch();
   }
 
