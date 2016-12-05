@@ -31,7 +31,3 @@ export default class App extends TrackerReact(Component) {
     );
   }
 }
-
-App.propTypes = {
-  polls: PropTypes.array.isRequired,
-};

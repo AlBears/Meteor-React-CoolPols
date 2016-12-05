@@ -14,7 +14,7 @@ export default class Option extends Component {
             }
         )
         let perc = 100 * votes / maxValue;
-        if (perc == undefined)
+        if (isNaN(perc))
             perc = 0;
         return `${perc}%`;
     }
