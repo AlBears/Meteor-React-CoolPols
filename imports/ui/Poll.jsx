@@ -28,6 +28,7 @@ export default class Poll extends Component {
     render() {
         return (
             <div className="poll">
+              <div className="card-section">
                 <div className="question">
                     <h3 className="">{this.props.poll.question}</h3>
                     <span className="pull-right icons">
@@ -44,12 +45,13 @@ export default class Poll extends Component {
                 </div>
                 <div className="panel-body">
                     <Option options={this.props.poll.options} key={this.props.poll.options.index}/>
-                    <div className="poll-footer">
+                    </div>
+                  </div>
+                  <div className="card-section poll-footer">
                         Created by {this.props.poll.author}
                         <span className="badge badge-info pull-right">{this.props.poll.totalVotes}</span>
                         <br/> {this.formatDate(this.props.poll.createdAt)}
-                    </div>
-                </div>
+                  </div>
             </div>
         );
     }
