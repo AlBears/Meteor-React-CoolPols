@@ -15,20 +15,124 @@ trans($sec = 0.3s)
 
 html
     box-sizing border-box
-    font-size 16px//responsive 12px 21px
-    font-range 420px 1280px
+    font-size 16px
+    //font-range 420px 1280px
+    //font-family Helvetica, Arial, sans-serif
 
 *, *:before, *:after
     box-sizing: inherit
 
 z = {
-    lowest: 1
+    lowest: 1,
+    header: 7
 }
+
+$large = 960px
+
+$content-top-normal = 60px
+
+.header
+  fixed top left
+  width 100%
+  margin 0
+  z-index: z.header
+  shadow-level(2)
+  clearfix()
+
+  .flex-nav
+    display flex
+    justify-content space-between
+    background-color #357185
+    color #FFF
+    margin 0
+    padding-right 10px
+    padding-left 10px
+    .header-logo
+      height 50px
+      margin-right 15px
+      padding 0
+      h1
+        margin 0
+        padding 7px 5px 0 5px
+        font-size 1.5em
+
+  .header-section
+    display flex
+    align-items center
+    +below($large)
+       flex-direction column
+       &.header-login
+         height 50px
+         padding-top 15px
+     &.header-links
+       flex 1 1
+
+  .nav-item
+    text-align center
+    height 50px
+    padding 15px 15px 0 15px
+    margin-right 10px
+    font-size 1.2em
+    a
+      &:link
+        text-decoration none
+        color white
+      &:hover
+        color #ddd
+        text-decoration none
+      &:visited
+        color white
+        text-decoration none
+      &:active
+        color white
+        text-decoration none
+    &:hover
+      background rgba(0,0,0,0.2)
+      a
+        color #A3C2CC
+    &.active
+      background rgba(0,0,0,0.3)
+
+    +below($large)
+      display none
+      &.open
+        display block
+
+    &.toggle-nav
+      display none
+      +below($large)
+        display block
+        color #fff
+        font-size 1.4em
+        text-align right
+
+  .header-logo
+    &:hover
+      background rgba(0,0,0,0)
+    &.active
+      background rgba(0,0,0,0)
+    display block
+
+.main-layout
+  lost-center 90%
+  margin-top $content-top-normal
+  margin-bottom 20px
+
+.site-content
+  width 100%
+
+.home
+  background blue
+  color #FFF
+  font-size 2em
+  text-align center
+  padding 60px
+  h2
+    margin 0
 
 .polls
   display flex
   flex-flow row wrap
-  justify-content flex-start
 
 .poll
     flex 1 1 380px

@@ -42,7 +42,7 @@ export default class App extends TrackerReact(Component) {
   }
   render() {
     return (
-      <div className="main-layout">
+      <div className="">
         <header>
           <h1>Polls</h1>
         </header>
